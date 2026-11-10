@@ -174,6 +174,82 @@ void updateStudent(){
 }
 
 //Delete student
+void deleteStudent(){
+  int id;
+
+  cout << "\nEnter Student ID to complete:";
+  cin >> id;
+
+  for (int i = 0; i < students.size(); i++){
+      if (students[i].id == id){
+         students.erase(students.begin()+i);
+        saveStudents();
+
+        cout << "\nStudents deleted sccessfully!\n";
+        return;
+      }
+ }
+ cout << "\nStudent not found!\n";
+}
+//Main menu
+int main(){
+  loadStudents();
+
+  int choice;
+
+  do{
+    cout << "\n=====================================\n";
+    cout << "   STUDENT MANAGEMENT SYSTEM\n";
+    cout << "\n====================================\n";
+
+    cout << "1. Register Student\n";
+    cout << "2. View All Students\n";
+    cout << "3. Search Student\n";
+    cout << "4. Update Student\n";
+    cout << "5. Delete Student\n";
+    cout << "6. Exit\n";
+
+    cout << "======================================\n";
+    cout << "Enter your choice:";
+
+    cin >> choice;
+
+    switch (choice){
+      case 1:
+        registerStudent();
+        break;
+
+      case 2:
+        viewStudent();
+        break;
+
+      case 3:
+        searchStudent();
+        break;
+
+      case 4;
+        updateStudent();
+        break;
+
+      case 5:
+        deleteStudent();
+        break;
+
+      case 6:
+        cout << "\nThank you for using the system!\n";
+        break;
+
+      default:
+        cout << "\nInvalid choice! try again.\n";
+    }
+  }while (choice ! = 6);
+
+  return 0;
+]
+
+      case 5;
+
+      
 
 
   
